@@ -1,0 +1,212 @@
+[
+  {
+    "user_id": "U001",
+    "name": "Alex Carter",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U002",
+    "name": "Jordan Lee",
+    "role": "Teacher",
+    "employment_status": "Inactive",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U003",
+    "name": "Sam Wilson",
+    "role": "Principal",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U004",
+    "name": "Maria Gonzalez",
+    "role": "Vice Principal",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U005",
+    "name": "Grace Liu",
+    "role": "Counselor",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U006",
+    "name": "Omar Haddad",
+    "role": "Counselor",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U007",
+    "name": "Fatima Noor",
+    "role": "Registrar",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U008",
+    "name": "Daniel Brooks",
+    "role": "Registrar",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U009",
+    "name": "Kevin Zhao",
+    "role": "IT Admin",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U010",
+    "name": "Leila Rahimi",
+    "role": "IT Admin",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U011",
+    "name": "Priya Nair",
+    "role": "Teacher",
+    "employment_status": "Inactive",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U012",
+    "name": "Tom Hughes",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U013",
+    "name": "Dana Okafor",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U014",
+    "name": "Hana Kim",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U015",
+    "name": "Noah Becker",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U016",
+    "name": "Marcus Bell",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Suspended"
+  },
+  {
+    "user_id": "U017",
+    "name": "Elena Rossi",
+    "role": "Teacher",
+    "employment_status": "Inactive",
+    "account_status": "Disabled"
+  },
+  {
+    "user_id": "U018",
+    "name": "Aisha Khan",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U019",
+    "name": "Lucas Meyer",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U020",
+    "name": "Sofia Petrova",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U021",
+    "name": "James O'Connor",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U022",
+    "name": "Mei Tanaka",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U023",
+    "name": "Carlos Mendes",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U024",
+    "name": "Amara Diallo",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U025",
+    "name": "Ethan Walker",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U026",
+    "name": "Zoe Fischer",
+    "role": "Teacher",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U027",
+    "name": "Ben Archer",
+    "role": "Substitute",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U028",
+    "name": "Nadia Farouk",
+    "role": "Substitute",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U029",
+    "name": "Ravi Patel",
+    "role": "Contractor",
+    "employment_status": "Active",
+    "account_status": "Active"
+  },
+  {
+    "user_id": "U030",
+    "name": "Hannah Schultz",
+    "role": "Contractor",
+    "employment_status": "Active",
+    "account_status": "Active"
+  }
+]

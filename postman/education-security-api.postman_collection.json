@@ -1,0 +1,748 @@
+{
+  "info": {
+    "name": "Education Data Security API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Meta",
+      "item": [
+        {
+          "name": "Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('No data problems', () => { const j = pm.response.json(); pm.expect(j.status).to.eql('ok'); pm.expect(j.integrity_issues).to.eql([]); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Reload data",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Reloaded', () => pm.expect(pm.response.json().status).to.eql('reloaded'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reload"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "All users (30)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('30 users incl. U001-U003', () => { const ids = pm.response.json().map(x => x.user_id); pm.expect(ids.length).to.eql(30); pm.expect(ids.slice(0,3)).to.eql(['U001','U002','U003']); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Inactive employees",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('user_ids match expected list', () => pm.expect(pm.response.json().map(x => x.user_id)).to.eql([\"U002\", \"U011\", \"U017\"]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users?employment_status=Inactive",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "employment_status",
+                  "value": "Inactive"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "User U002",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Jordan Lee, Inactive', () => { const j = pm.response.json(); pm.expect(j.name).to.eql('Jordan Lee'); pm.expect(j.employment_status).to.eql('Inactive'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users/U002",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "U002"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unknown user -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users/U999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "U999"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Permissions",
+      "item": [
+        {
+          "name": "All permissions (30)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('30 records', () => pm.expect(pm.response.json().length).to.eql(30));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/permissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Permissions for U001",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Grade 5 only', () => pm.expect(pm.response.json().allowed_classes).to.eql(['Grade 5']));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/permissions/U001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions",
+                "U001"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Permissions for U003",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Grades 5-7', () => pm.expect(pm.response.json().allowed_classes).to.eql(['Grade 5','Grade 6','Grade 7']));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/permissions/U003",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions",
+                "U003"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unknown user permissions -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/permissions/U999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions",
+                "U999"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Students",
+      "item": [
+        {
+          "name": "All students (120)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('120 records with a class field', () => { const j = pm.response.json(); pm.expect(j.length).to.eql(120); pm.expect(j[0]).to.have.property('class'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Grade 6 students",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('24 Grade 6 students incl. S003 and S004', () => { const j = pm.response.json(); const ids = j.map(x => x.student_id); pm.expect(j.length).to.eql(24); pm.expect(ids).to.include('S003'); pm.expect(ids).to.include('S004'); pm.expect(j.every(x => x.class === 'Grade 6')).to.eql(true); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students?class=Grade%206",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "students"
+              ],
+              "query": [
+                {
+                  "key": "class",
+                  "value": "Grade 6"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Student S003",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('S003 is Leo Nguyen, Grade 6', () => { const j = pm.response.json(); pm.expect(j.name).to.eql(\"Leo Nguyen\"); pm.expect(j.class).to.eql('Grade 6'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/S003",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "students",
+                "S003"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unknown student -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/students/S999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "students",
+                "S999"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Access logs",
+      "item": [
+        {
+          "name": "All logs (288)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('288 records', () => pm.expect(pm.response.json().length).to.eql(288));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs?limit=5000",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Logs for U001 on 11 Oct",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('log_ids match expected list', () => pm.expect(pm.response.json().map(x => x.log_id)).to.eql([\"L001\", \"L003\", \"L005\"]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs?user_id=U001&since=2026-10-11&until=2026-10-11",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "U001"
+                },
+                {
+                  "key": "since",
+                  "value": "2026-10-11"
+                },
+                {
+                  "key": "until",
+                  "value": "2026-10-11"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Denied attempts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Denied log includes L005', () => { const ids = pm.response.json().map(x => x.log_id); pm.expect(ids.length).to.eql(1); pm.expect(ids).to.include('L005'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs?result=denied",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs"
+              ],
+              "query": [
+                {
+                  "key": "result",
+                  "value": "denied"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Date window 10:00-10:10",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('log_ids match expected list', () => pm.expect(pm.response.json().map(x => x.log_id)).to.eql([\"L003\", \"L004\"]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs?since=2026-10-11%2010:00&until=2026-10-11%2010:10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs"
+              ],
+              "query": [
+                {
+                  "key": "since",
+                  "value": "2026-10-11 10:00"
+                },
+                {
+                  "key": "until",
+                  "value": "2026-10-11 10:10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Single log L003",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('U001 viewed S001', () => { const j = pm.response.json(); pm.expect(j.user_id).to.eql('U001'); pm.expect(j.student_id).to.eql('S001'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs/L003",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs",
+                "L003"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unknown log -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/access-logs/L999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "access-logs",
+                "L999"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Incidents",
+      "item": [
+        {
+          "name": "All incidents (5)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('5 incidents I001-I005', () => pm.expect(pm.response.json().map(x => x.incident_id)).to.eql([\"I001\", \"I002\", \"I003\", \"I004\", \"I005\"]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/incidents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "incidents"
+              ]
+            }
+          }
+        },
+        {
+          "name": "High-risk incidents",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('incident_ids match expected list', () => pm.expect(pm.response.json().map(x => x.incident_id)).to.eql([\"I002\", \"I003\", \"I004\"]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/incidents?expected_risk=High",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "incidents"
+              ],
+              "query": [
+                {
+                  "key": "expected_risk",
+                  "value": "High"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Incident I001",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Links to L002, Critical', () => { const j = pm.response.json(); pm.expect(j.related_log_id).to.eql('L002'); pm.expect(j.expected_risk).to.eql('Critical'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/incidents/I001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "incidents",
+                "I001"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

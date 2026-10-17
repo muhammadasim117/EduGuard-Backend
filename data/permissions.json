@@ -1,0 +1,350 @@
+[
+  {
+    "user_id": "U001",
+    "allowed_classes": [
+      "Grade 5"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U002",
+    "allowed_classes": [
+      "Grade 5"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U003",
+    "allowed_classes": [
+      "Grade 5",
+      "Grade 6",
+      "Grade 7"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U004",
+    "allowed_classes": [
+      "Grade 4",
+      "Grade 5",
+      "Grade 6",
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U005",
+    "allowed_classes": [
+      "Grade 4",
+      "Grade 5",
+      "Grade 6",
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U006",
+    "allowed_classes": [
+      "Grade 6",
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U007",
+    "allowed_classes": [
+      "Grade 4",
+      "Grade 5",
+      "Grade 6",
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U008",
+    "allowed_classes": [
+      "Grade 4",
+      "Grade 5",
+      "Grade 6",
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U009",
+    "allowed_classes": [],
+    "can_view_student_records": false,
+    "permission_level": "Administrator",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U010",
+    "allowed_classes": [],
+    "can_view_student_records": false,
+    "permission_level": "Administrator",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U011",
+    "allowed_classes": [
+      "Grade 6",
+      "Grade 7"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U012",
+    "allowed_classes": [
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U013",
+    "allowed_classes": [
+      "Grade 5"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U014",
+    "allowed_classes": [
+      "Grade 6"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U015",
+    "allowed_classes": [
+      "Grade 4"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U016",
+    "allowed_classes": [
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U017",
+    "allowed_classes": [
+      "Grade 4"
+    ],
+    "can_view_student_records": false,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U018",
+    "allowed_classes": [
+      "Grade 4",
+      "Grade 5"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Administrator",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U019",
+    "allowed_classes": [
+      "Grade 6"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U020",
+    "allowed_classes": [
+      "Grade 7"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U021",
+    "allowed_classes": [
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U022",
+    "allowed_classes": [
+      "Grade 4"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U023",
+    "allowed_classes": [
+      "Grade 5",
+      "Grade 6"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U024",
+    "allowed_classes": [
+      "Grade 7",
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U025",
+    "allowed_classes": [
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U026",
+    "allowed_classes": [
+      "Grade 6",
+      "Grade 7"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U027",
+    "allowed_classes": [
+      "Grade 5"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U028",
+    "allowed_classes": [
+      "Grade 8"
+    ],
+    "can_view_student_records": true,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "Central District"
+    ]
+  },
+  {
+    "user_id": "U029",
+    "allowed_classes": [],
+    "can_view_student_records": false,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "North District"
+    ]
+  },
+  {
+    "user_id": "U030",
+    "allowed_classes": [],
+    "can_view_student_records": false,
+    "permission_level": "Standard",
+    "authorized_districts": [
+      "North District"
+    ]
+  }
+]

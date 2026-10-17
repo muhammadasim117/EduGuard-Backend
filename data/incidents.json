@@ -1,0 +1,42 @@
+[
+  {
+    "incident_id": "I001",
+    "title": "Former employee accessed student data",
+    "user_id": "U002",
+    "related_log_id": "L002",
+    "expected_risk": "Critical",
+    "expected_recommendation": "Disable the account, revoke active sessions, investigate recent activity, and verify offboarding."
+  },
+  {
+    "incident_id": "I002",
+    "title": "Teacher assigned excessive administrator-level permissions",
+    "user_id": "U018",
+    "related_log_id": "L161",
+    "expected_risk": "High",
+    "expected_recommendation": "Review the permission change, remove unnecessary privileges and restore least-privilege access."
+  },
+  {
+    "incident_id": "I003",
+    "title": "Teacher accessed a student outside their assigned class",
+    "user_id": "U001",
+    "related_log_id": "L162",
+    "expected_risk": "High",
+    "expected_recommendation": "Investigate the access, verify whether an authorized exception exists and restrict access if needed."
+  },
+  {
+    "incident_id": "I004",
+    "title": "Bulk download of student records in a short period",
+    "user_id": "U012",
+    "related_log_id": "L265",
+    "expected_risk": "High",
+    "expected_recommendation": "Review the activity, verify the user's identity and business purpose, and investigate possible data exposure."
+  },
+  {
+    "incident_id": "I005",
+    "title": "Vendor accessed student records outside its approved district",
+    "user_id": "U029",
+    "related_log_id": "L270",
+    "expected_risk": "Critical",
+    "expected_recommendation": "Block unauthorized access, review vendor permissions, revoke compromised credentials if indicated, and investigate exposure."
+  }
+]
